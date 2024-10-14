@@ -10,8 +10,7 @@ source:
   sha256: 242d6901a81260f618938635a25ae7f208e744f7ee6c571f1b255c1c4c62917d
 
 build:
-  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 2
   skip: true  # [win]
 
 requirements:
@@ -32,6 +31,7 @@ requirements:
     - meson >=1.0.0
     - meson-python >=0.14.0
     - pip
+    - python-build
   run:
     - python
 
@@ -39,7 +39,8 @@ test:
   imports:
     - siphash24
   commands:
-    - "PYTHONHASHSEED=0 python check.py"
+    # https://github.com/dnicolodi/python-siphash24/issues/8:
+    - "PYTHONHASHSEED=0 python check.py"  # [not ((ppc64le or aarch64) and py<312)]
     - python test.py
   source_files:
     - test.py
