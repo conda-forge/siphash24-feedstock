@@ -10,7 +10,6 @@ source:
   sha256: 242d6901a81260f618938635a25ae7f208e744f7ee6c571f1b255c1c4c62917d
 
 build:
-  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   number: 2
   skip: true  # [win]
 
@@ -32,6 +31,7 @@ requirements:
     - meson >=1.0.0
     - meson-python >=0.14.0
     - pip
+    - python-build
   run:
     - python
 
