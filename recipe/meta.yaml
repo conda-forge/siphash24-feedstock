@@ -1,5 +1,5 @@
 {% set name = "siphash24" %}
-{% set version = "1.6" %}
+{% set version = "1.7" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/siphash24-{{ version }}.tar.gz
-  sha256: 242d6901a81260f618938635a25ae7f208e744f7ee6c571f1b255c1c4c62917d
+  sha256: 6e90fee5f199ea25b4e7303646b31872a437174fe885a93dbd4cf7784eb48164
 
 build:
-  number: 2
+  number: 0
   skip: true  # [win]
 
 requirements:
@@ -54,8 +54,8 @@ about:
   dev_url: https://github.com/dnicolodi/python-siphash24/
   license: 'Apache-2.0 or LGPL-2.1-or-later'
   license_file:
-  - LICENSES/Apache-2.0.txt
-  - LICENSES/LGPL-2.1-or-later.txt
+    - LICENSES/Apache-2.0.txt
+    - LICENSES/LGPL-2.1-or-later.txt
 
 extra:
   recipe-maintainers:
