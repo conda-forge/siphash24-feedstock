@@ -39,8 +39,7 @@ test:
   imports:
     - siphash24
   commands:
-    # https://github.com/dnicolodi/python-siphash24/issues/8:
-    - "PYTHONHASHSEED=0 python check.py"  # [not ((ppc64le or aarch64) and py<312)]
+    - PYTHONHASHSEED=0 python check.py
     - python test.py
   source_files:
     - test.py
