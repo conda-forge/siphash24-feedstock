@@ -1,10 +1,10 @@
 #!/bin/bash
 
+# See https://github.com/conda-forge/numpy-feedstock/blob/main/recipe/build.sh
+
 set -ex
 
 mkdir builddir
-
-# {{{ Taken from https://github.com/conda-forge/numpy-feedstock/blob/main/recipe/build.sh
 
 # HACK: extend $CONDA_PREFIX/meson_cross_file that's created in
 # https://github.com/conda-forge/ctng-compiler-activation-feedstock/blob/main/recipe/activate-gcc.sh
@@ -22,7 +22,4 @@ $PYTHON -m build -w -n -x \
     -Csetup-args=${MESON_ARGS_REDUCED// / -Csetup-args=} \
     || (cat builddir/meson-logs/meson-log.txt && exit 1)
 
-
 $PYTHON -m pip install dist/siphash*.whl
-
-# }}}
