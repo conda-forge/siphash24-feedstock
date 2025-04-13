@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/siphash24-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/siphash24-{{ version }}.tar.gz
   sha256: 6e90fee5f199ea25b4e7303646b31872a437174fe885a93dbd4cf7784eb48164
 
 build:
