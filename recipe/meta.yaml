@@ -10,8 +10,7 @@ source:
   sha256: 6e90fee5f199ea25b4e7303646b31872a437174fe885a93dbd4cf7784eb48164
 
 build:
-  number: 0
-  skip: true  # [win]
+  number: 1
 
 requirements:
   build:
@@ -39,7 +38,8 @@ test:
   imports:
     - siphash24
   commands:
-    - PYTHONHASHSEED=0 python check.py
+    - PYTHONHASHSEED=0 python check.py           # [not win]
+    - set "PYTHONHASHSEED=0" && python check.py  # [win]
     - python test.py
   source_files:
     - test.py
