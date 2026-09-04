@@ -6,11 +6,11 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/siphash24-{{ version }}.tar.gz
+  url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/siphash24-{{ version }}.tar.gz
   sha256: aa932f0af4a7335caef772fdaf73a433a32580405c41eb17ff24077944b0aa97
 
 build:
-  number: 2
+  number: 3
 
 requirements:
   build:
